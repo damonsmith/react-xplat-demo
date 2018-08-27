@@ -1,0 +1,33 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# the ts config is symlinked at start time to allow it to switch
+# between native and web. Probably need a better solution than this.
+tsconfig.json
+
+# dependencies
+node_modules
+
+
+# testing
+/coverage
+
+# production
+/build
+/functions/lib
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# intellij
+/.idea
+**/*.iml
+
+firebase-debug.log

@@ -1,0 +1,104 @@
+{
+	"extends": [
+		"tslint-react"
+	],
+	"jsRules": {
+		"max-line-length": {
+			"options": [
+				200
+			]
+		}
+	},
+	"rules": {
+		"class-name": true,
+		"comment-format": [
+			true,
+			"check-space"
+		],
+		"indent": [
+			true,
+			"tabs"
+		],
+		"no-consecutive-blank-lines": [
+			true,
+			1
+		],
+		"no-duplicate-variable": true,
+		"no-eval": true,
+		"no-internal-module": true,
+		"no-trailing-whitespace": true,
+		"no-irregular-whitespace": true,
+		"import-spacing": true,
+		"space-before-function-paren": [
+			true,
+			"never"
+		],
+		"no-unsafe-finally": true,
+		"no-var-keyword": true,
+		"eofline": true,
+		"jsdoc-format": true,
+		"one-line": [
+			true,
+			"check-open-brace",
+			"check-whitespace"
+		],
+		"quotemark": [
+			false
+		],
+		"semicolon": [
+			true,
+			"never"
+		],
+		"triple-equals": [
+			true,
+			"allow-null-check"
+		],
+		"typedef-whitespace": [
+			true,
+			{
+				"call-signature": "nospace",
+				"index-signature": "nospace",
+				"parameter": "nospace",
+				"property-declaration": "nospace",
+				"variable-declaration": "nospace"
+			}
+		],
+		"variable-name": [
+			true,
+			"ban-keywords"
+		],
+		"whitespace": [
+			true,
+			"check-branch",
+			"check-decl",
+			"check-operator",
+			"check-module",
+			"check-separator",
+			"check-rest-spread",
+			"check-type",
+			"check-type-cast",
+			"check-type-operator"
+		],
+		"jsx-no-multiline-js": false,
+		"jsx-equals-spacing": [
+			true,
+			"never"
+		],
+		"jsx-curly-spacing": [
+			true,
+			"never"
+		],
+		"jsx-no-lambda": false,
+		"jsx-use-translation-function": false,
+		"trailing-comma": [
+			true,
+			{
+				"multiline": "never",
+				"singleline": "never"
+			}
+		],
+		"prefer-const": true,
+		"arrow-return-shorthand": true,
+		"prefer-switch": true
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"name": "cross-platform-base",
+	"version": "0.1.0",
+	"private": true,
+	"devDependencies": {
+		"@types/react": "^16.4.2",
+		"@types/react-native": "^0.56.14",
+		"@types/react-test-renderer": "^16.0.2",
+		"jest-expo-ts": "^22.0.1",
+		"react-native-scripts-ts": "1.15.0",
+		"react-native-typescript-transformer": "^1.2.10",
+		"react-scripts-ts": "^2.17.0",
+		"react-test-renderer": "16.4.2",
+		"tslib": "^1.9.3",
+		"typescript": "^3.0.1"
+	},
+	"main": "./node_modules/react-native-scripts-ts/build/bin/crna-entry.js",
+	"scripts": {
+		"clean": "rm -Rf build",
+		"web": "ln -sf tsconfig.web.json tsconfig.json && react-scripts-ts start",
+		"watchweb": "ln -sf tsconfig.web.json tsconfig.json && node scripts/watch.js",
+		"build": "ln -sf tsconfig.web.json tsconfig.json && react-scripts-ts build",
+		"native": "ln -sf tsconfig.native.json tsconfig.json && react-native-scripts-ts start",
+		"android": "ln -sf tsconfig.native.json tsconfig.json && react-native-scripts-ts android",
+		"ios": "ln -sf tsconfig.native.json tsconfig.json && react-native-scripts-ts ios",
+		"test": "ln -sf tsconfig.native.json tsconfig.json && node node_modules/jest/bin/jest.js --watch"
+	},
+	"jest": {
+		"preset": "jest-expo-ts"
+	},
+	"dependencies": {
+		"@types/classnames": "^2.2.6",
+		"@types/node": "^10.9.2",
+		"@types/react-dom": "^16.0.7",
+		"classnames": "^2.2.6",
+		"expo": "^29.0.0",
+		"mobx": "^5.1.0",
+		"mobx-react": "^5.2.5",
+		"moment": "^2.20.1",
+		"react": "16.4.2",
+		"react-dom": "^16.4.2",
+		"react-native": "^0.56.0",
+		"route-recognizer": "^0.3.4",
+		"typestyle": "^2.0.1",
+		"xhr-request-promise": "^0.1.2"
+	}
+}
