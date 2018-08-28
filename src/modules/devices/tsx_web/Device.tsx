@@ -3,7 +3,6 @@ import { style } from 'typestyle'
 import { StateStore } from '../../base'
 import { observer } from 'mobx-react'
 import { SubHeader } from '../../styleguide'
-const tempControllerImage = require('../../styleguide/images/temp-controller.png')
 
 const homeContentStyle = style({
 	margin: '2rem'
@@ -30,9 +29,6 @@ export class Device extends React.Component<Props, {}> {
 			return (
 				<div>
 					<SubHeader text={`Device: ${device.nickname}`} />
-					<div className={homeContentStyle}>
-					text {tempControllerImage}
-					</div>
 				</div>
 			)
 		}

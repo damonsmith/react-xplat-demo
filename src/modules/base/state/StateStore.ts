@@ -1,4 +1,5 @@
-import { DeviceState } from '../../devices'
+import { DevicesState } from '../../devices'
+import { AccountState } from '../../account'
 import { Router } from '../../router'
 import { APIClient } from '../../apiclient'
 import { observable, action } from 'mobx'
@@ -6,9 +7,11 @@ import { observable, action } from 'mobx'
 export class StateStore {
 
 	api: APIClient
-	devices: DeviceState
+	account: AccountState
 	router: Router
+
 	@observable location: string
+	@observable devices: DevicesState
 
 	@action onLocationChange = (to: string): void => {
 		this.location = to
@@ -16,7 +19,8 @@ export class StateStore {
 
 	constructor() {
 		this.api = new APIClient()
+		this.account = new AccountState()
 		this.router = new Router(this.onLocationChange)
-		this.devices = new DeviceState(this.api)
+		this.devices = new DevicesState(this.api)
 	}
 }

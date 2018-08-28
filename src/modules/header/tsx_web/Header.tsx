@@ -45,8 +45,8 @@ export class Header extends React.Component<HeaderProps, {}> {
 			<div className={topStyle}>
 				<div className={logoStyle}><Link to="/">React XPLAT Demo</Link></div>
 				<div className={loginAreaStyle}>
-					{appState.login.displayName
-						? <Link to="/account"><span className={attentionDot}/>{appState.login.displayName}</Link>
+					{appState.account.isLoggedIn
+						? <Link to="/account"><span className={attentionDot}/>{appState.account.displayName}</Link>
 						: <Link to="/login"><span className={attentionDot}/>Sign in</Link>
 					}
 				</div>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { style } from 'typestyle'
 import { StateStore } from '../../base'
 import { observer } from 'mobx-react'
-// import { Redirect } from 'react-router-dom'
+import { Redirect } from '../../router'
 
 const topStyle = style({
 	display: 'flex',
@@ -17,13 +17,19 @@ interface Props {
 
 @observer
 export class Account extends React.Component<Props, {}> {
+
 	render() {
 		const { appState } = this.props
-		return (
-			<div className={topStyle}>
-				<h1>Logged in as: {appState.login.displayName} - {appState.login.email}</h1>
-				<div onClick={this.props.appState.login.signOut}>Log out</div>
-			</div>
-		)
+		if (appState.account.isLoggedIn) {
+			return (
+				<div className={topStyle}>
+					<h1>Logged in as: {appState.account.displayName} - {appState.account.email}</h1>
+					<div onClick={this.props.appState.account.signOut}>Log out</div>
+				</div>
+			)
+		}
+		else {
+			return <Redirect path="/login" router={appState.router} />
+		}
 	}
 }

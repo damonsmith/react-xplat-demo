@@ -3,7 +3,8 @@ import { registerServiceWorker } from './registerServiceWorker'
 import { embedFonts } from '../../styleguide'
 import { HomePage } from '../../home'
 import { Devices, Device } from '../../devices'
-import { Account } from '../../account'
+import { Account } from '../../account/tsx_web/Account'
+import { Login } from '../../account/tsx_web/Login'
 import { observer } from 'mobx-react'
 import { AppLayout } from './AppLayout'
 import { Header } from '../../header'
@@ -21,19 +22,19 @@ export class BaseApplication extends React.Component<{appState: StateStore}, {}>
 
 	render() {
 		console.log(this.props.appState.location)
-			return (
-				<AppLayout
-					header={<Header appState={this.props.appState} />}
-					content={(
-						<div>
-							<Route path="/" router={this.props.appState.router}><HomePage appState={this.props.appState} /></Route>
-							<Route path="/account" router={this.props.appState.router}><Account appState={this.props.appState} /></Route>
-							<Route path="/devices" router={this.props.appState.router}><Devices appState={this.props.appState} /></Route>
-							<Route path="/device/:deviceId" router={this.props.appState.router}><Device appState={this.props.appState} /></Route>
-						</div>
-					)}
-					footer={<div />}
-				/>
-			)
+		return (
+			<AppLayout
+				header={<Header appState={this.props.appState} />}
+				content={(
+					<div>
+						<Route path="/" router={this.props.appState.router}><Devices appState={this.props.appState} /></Route>
+						<Route path="/login" router={this.props.appState.router}><Login appState={this.props.appState} /></Route>
+						<Route path="/account" router={this.props.appState.router}><Account appState={this.props.appState} /></Route>
+						<Route path="/device/:deviceId" router={this.props.appState.router}><Device appState={this.props.appState} /></Route>
+					</div>
+				)}
+				footer={<div />}
+			/>
+		)
 	}
 }

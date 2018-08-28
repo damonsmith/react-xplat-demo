@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Dev instructions:
 1. Setup nodenv and node-build (google it)
 2. cd into this folder and run `nodenv install`
-3. `npm install -g yarn firebase-tools && nodenv rehash`
+3. `npm install -g yarn && nodenv rehash`
 4. `yarn install`
 5. `yarn web`
 

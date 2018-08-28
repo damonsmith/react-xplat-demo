@@ -2,8 +2,9 @@ export const Colors = {
 	black: "#000000",
 	white: "#ffffff",
 	text: "white",
-	globalBackground: '#2d2d2d',
-	brandColor: '#283c4e',
-	secondaryBrandColor: '#303042',
-	primary: '#ad4f0c'
+	globalBackground: "#0b3c5d",
+	modalBackground: "#328cc1",
+	brandColor: '#1d2731',
+	secondaryBrandColor: '#d9b310',
+	primary: '#d9b310'
 }

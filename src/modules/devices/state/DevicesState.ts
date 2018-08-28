@@ -3,27 +3,34 @@ import { APIClient } from '../../apiclient'
 
 export interface Device {
 	id: string
-	owner: string
 	nickname: string
 	type: string
-	currentTemp: number
 	poweredOn: boolean
 	operating: boolean
 }
 
-export class DeviceState {
-	@observable list: Device[]
+export class DevicesState {
 
 	@observable selected: Device
+	@observable list: Device[]
 
-	api: APIClient
-
-	loginState: LoginState
-
-	constructor(api: APIClient, loginState: LoginState) {
-		this.list = []
-		this.loginState = loginState
-		this.api = api
+	constructor(private api: APIClient) {
+		this.list = [
+			{
+				id: "127",
+				nickname: "70s stereo",
+				type: "amplifier",
+				poweredOn: true,
+				operating: false
+			},
+			{
+				id: "224",
+				nickname: "Lounge TV",
+				type: "TV",
+				poweredOn: true,
+				operating: false
+			}
+		]
 	}
 
 	getDevices() {

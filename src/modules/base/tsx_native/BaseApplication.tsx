@@ -20,7 +20,7 @@ export class BaseApplication extends React.Component<{appState: StateStore}, {}>
 
 	render() {
 		return (
-			<Text style={styles}>test</Text>
+			<Text style={styles.container}>test</Text>
 		)
 	}
 }
