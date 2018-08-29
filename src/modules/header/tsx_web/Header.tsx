@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { style } from 'typestyle'
-import { Colors } from '../../styleguide'
-import { StateStore } from '../../base'
+import { Colors } from '../../styleguide/colors'
+import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
-import { Link } from '../../router'
+import { Link } from '../../router/src/Link'
 
 const topStyle = style({
 	display: 'flex',

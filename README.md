@@ -18,14 +18,15 @@ This project mashes together the create-react-app-ts project and the create-reac
 The two aren't designed to play nicely together so here's what I did to make it basically work:
 
 Steps to recreate this base project from scratch:
-0. npm install -g create-react-native-app create-react-app-ts
-1. create-react-native-app <projectname> --scripts-version=react-native-scripts-ts
-2. create-react-app-ts web-temp
-3. copy all the dependencies and devDependencies from web-temp package.json into the new native project package.json
+0. npm install -g create-react-native-app create-react-app
+1. create-react-native-app <projectname1> --scripts-version=react-native-scripts-ts
+2. create-react-app my-app <projectname2> --scripts-version=react-scripts-ts
+3. copy all the dependencies and devDependencies from web-temp package.json into the new native project package.json, but keep react and react-dom at the versions that are currently there
 4. copy src, public, tslint.json across to the new native project.
 5. move tsconfig.json to tsconfig.native.json
 6. copy tsconfig.json from web-temp to tsconfig.web.json in native project folder
 7. add skipLibCheck: true to the compilerOptions in both tsconfig.web.json and tsconfig.native.json files
+8. add an exclude block to the tsconfig.web.json that excludes App.tsx and App.test.tsx
 8. add the package.json scripts block from this project
 9. run yarn and cross your fingers
 10. run yarn web or yarn ios or yarn android.

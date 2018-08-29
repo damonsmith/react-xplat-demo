@@ -1,5 +1,4 @@
 import { action, observable } from 'mobx'
-import { APIClient } from '../../apiclient'
 
 export interface Device {
 	id: string
@@ -11,10 +10,10 @@ export interface Device {
 
 export class DevicesState {
 
-	@observable selected: Device
+	@observable selected: Device | null = null
 	@observable list: Device[]
 
-	constructor(private api: APIClient) {
+	constructor() {
 		this.list = [
 			{
 				id: "127",
@@ -29,8 +28,7 @@ export class DevicesState {
 				type: "TV",
 				poweredOn: true,
 				operating: false
-			}
-		]
+			}]
 	}
 
 	getDevices() {

@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { style } from 'typestyle'
-import { StateStore } from '../../base'
+import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
-import { Colors } from '../../styleguide'
-import { Link } from '../../router'
+import { Colors } from '../../styleguide/colors'
+import { Link } from '../../router/src/Link'
 
 const homeContentStyle = style({
 	padding: '10rem 2rem',

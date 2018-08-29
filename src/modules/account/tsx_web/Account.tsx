@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { style } from 'typestyle'
-import { StateStore } from '../../base'
+import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
-import { Redirect } from '../../router'
+import { Redirect } from '../../router/src/Redirect'
 
 const topStyle = style({
 	display: 'flex',

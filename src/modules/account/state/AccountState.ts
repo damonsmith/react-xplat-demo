@@ -1,4 +1,3 @@
-import { defaultConfig } from '../../../config/appConfig'
 import { action, observable } from 'mobx'
 
 export class AccountState {

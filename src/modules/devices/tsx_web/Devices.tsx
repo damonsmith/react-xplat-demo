@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { style } from 'typestyle'
-import { StateStore } from '../../base'
+import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
-import { SubHeader, ListButton } from '../../styleguide'
-import { navigate } from '../../router'
+import { SubHeader } from '../../styleguide/tsx_web/SubHeader'
+import { ListButton } from '../../styleguide/tsx_web/ListButton'
 
 interface Props {
 	appState: StateStore
@@ -22,7 +21,9 @@ export class Devices extends React.Component<Props, {}> {
 		return (
 			<div>
 				<SubHeader text={`Devices`} />
-				{deviceList.forEach((device) => <ListButton icon="" text={device.nickname} clickHandler={() => appState.devices.select(device.id)}/>)}
+				{deviceList.map(device => <ListButton key={device.id} icon="" text={device.nickname} clickHandler={() => appState.devices.select(device.id)}/>)}
+				<SubHeader text={'Add new'} />
+
 			</div>
 		)
 	}

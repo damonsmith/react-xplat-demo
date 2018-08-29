@@ -1,10 +1,9 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { BaseApplication, StateStore } from './modules/base'
+import { BaseApplication } from './modules/base/tsx_web/BaseApplication'
+import { StateStore } from './modules/base/state/StateStore'
 
 const appState = new StateStore()
-
-window['appState'] = appState
 
 ReactDOM.render(
 	<BaseApplication appState={appState} />,

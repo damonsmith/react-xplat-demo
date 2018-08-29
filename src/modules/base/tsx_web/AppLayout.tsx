@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { style } from 'typestyle'
-import { Colors } from '../../styleguide'
+import { Colors } from '../../styleguide/colors'
 import { observer } from 'mobx-react'
 
 const styles = {

@@ -18,7 +18,9 @@ export class Router {
 	activeRoutes: Result[] = []
 
 	constructor(private locationChangeHandler?: (to: string) => void) {
-		window.addEventListener('popstate', event => this._locationChanged(window.location.pathname))
+		if (window && window.addEventListener) {
+			window.addEventListener('popstate', event => this._locationChanged(window.location.pathname))
+		}
 		routers.push(this)
 	}
 
