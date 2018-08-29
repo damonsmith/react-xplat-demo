@@ -1,9 +1,7 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
 import { registerServiceWorker } from './registerServiceWorker'
 import { embedFonts } from '../../styleguide/font'
 import { Devices } from '../../devices/tsx_web/Devices'
-import { Device } from '../../devices/tsx_web/Device'
 import { Account } from '../../account/tsx_web/Account'
 import { Login } from '../../account/tsx_web/Login'
 import { observer } from 'mobx-react'
@@ -33,7 +31,6 @@ export class BaseApplication extends React.Component<{appState: StateStore}, {}>
 						<Route path="/" router={this.props.appState.router}><Devices appState={this.props.appState} /></Route>
 						<Route path="/login" router={this.props.appState.router}><Login appState={this.props.appState} /></Route>
 						<Route path="/account" router={this.props.appState.router}><Account appState={this.props.appState} /></Route>
-						<Route path="/device/:deviceId" router={this.props.appState.router}><Device appState={this.props.appState} /></Route>
 					</div>
 				)}
 				footer={<div />}

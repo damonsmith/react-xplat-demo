@@ -9,6 +9,8 @@ const styles = {
 		fontFamily: 'Arial, Helvetica, sans-serif',
 		display: 'flex',
 		width: '100%',
+		maxWidth: '50rem',
+		margin: '0 auto',
 		height: '100%',
 		flexDirection: 'column',
 		backgroundColor: Colors.globalBackground,

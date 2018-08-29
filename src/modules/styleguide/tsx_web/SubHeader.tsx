@@ -3,9 +3,9 @@ import { style } from 'typestyle'
 import { Colors } from '../colors'
 const topStyle = style({
 	display: 'flex',
-	padding: '2rem',
-	backgroundColor: Colors.secondaryBrandColor,
-	backgroundSize: '2rem'
+	padding: '1rem',
+	marginBottom: '0.6rem',
+	backgroundColor: Colors.secondaryBrandColor
 })
 
 const headerStyle = style({

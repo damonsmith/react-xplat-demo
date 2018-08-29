@@ -4,6 +4,7 @@ import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
 import { Colors } from '../../styleguide/colors'
 import { Redirect } from '../../router/src/Redirect'
+import { FormField } from '../../styleguide/tsx_web/FormField'
 
 const loginModalStyle = style({
 	display: 'flex',
@@ -30,8 +31,8 @@ export class Login extends React.Component<Props, {}> {
 			return (
 				<div className={loginModalStyle}>
 					<h1>Log in</h1>
-					<label>Email:</label><input />
-					<label>Password:</label><input type="password"/>
+					<FormField label="username" field={appState.account.usernameField} />
+					<FormField label="password" type="password" field={appState.account.passwordField} />
 					<button onClick={appState.account.signIn}>Log in</button>
 				</div>
 			)

@@ -18,12 +18,23 @@ Note that the build tools are different for each.
 
 Ideas to demonstrate how it works:
 
-1. Modify Devices.tsx, change the header from Devices to something else. - See that this only affects web and not iOS.
-2. Edit DeviceState.ts, add a new entry into the list of devices, see that it appears in both web and native apps
-3. Modify the header colour
-4. 
+1. Ask someone in the crowd to suggest a very simple change to make that will only affect web
+e.g: Modify tsx_web/Devices.tsx, change the header from Devices to something else. - See that this only affects web and not iOS.
+
+2. Ask someone in the crowd to suggest a change that affects both platforms
+e.g. Edit DeviceState.ts, add a new entry into the list of devices, see that it appears in both web and native apps
+
+3. Modify the header colour, see it change both because the value is shared
+
 
 Wrap up:
+
+It's important to think about how you structure your state. Separating presentation state from the domain models underneath is useful for big codebases.
+
+How much of the code is shared and how much is platform specific? 
+The presentation TSX code is platform specific. State objects, domain, API, business logic, validation, error handling and presentation models are all shareable.
+
+We don't share styles, although clearly they're very similar and it would maybe be useful. The benefits of sharing them are probably outweighed by the problem of unintended consequences and the difficulty or impossibility of testing the nuances of layout.
 
 What else could be shared, what are the pros and cons?
 

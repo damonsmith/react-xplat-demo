@@ -1,4 +1,5 @@
 import { action, observable } from 'mobx'
+import { FormFieldState } from '../../styleguide/state/FormFieldState'
 
 export class AccountState {
 
@@ -7,11 +8,17 @@ export class AccountState {
 	@observable displayName: string
 	@observable email: string
 
+	@observable usernameField: FormFieldState
+	@observable passwordField: FormFieldState
+
 	constructor() {
 		this.loginInProgress = false
 		this.isLoggedIn = false
 		this.displayName = ""
 		this.email = ""
+
+		this.usernameField = new FormFieldState()
+		this.passwordField = new FormFieldState()
 	}
 
 	@action signOut = () => {
@@ -21,14 +28,9 @@ export class AccountState {
 	}
 
 	@action signIn = () => {
-		this.loginInProgress = true
-		setTimeout(this.setSignedIn.bind(this), 500)
-	}
-
-	@action setSignedIn() {
 		this.isLoggedIn = true
 		this.loginInProgress = false
-		this.displayName = "Fred bloggs"
-		this.email = "fred@bloggs.com"
+		this.displayName = this.usernameField.value
+		this.email = ""
 	}
 }

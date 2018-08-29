@@ -1,60 +1,36 @@
 import * as React from 'react'
 import { style } from 'typestyle'
+import { FormFieldState } from '../state/FormFieldState'
+import { observer } from 'mobx-react'
 
-const itemStyle = style({
+const formFieldStyle = style({
 	padding: '1rem',
-	margin: '0 0 2rem 0',
+	backgroundColor: '#dddddd',
 	display: 'flex',
-	backgroundColor: 'white',
 	color: 'black',
 	justifyContent: 'space-between',
-	boxShadow: '0 0 0.25rem #999',
-	cursor: 'pointer',
-	$nest: {
-		'&:active': {
-			backgroundColor: '#ddf'
-		}
-	}
+	cursor: 'pointer'
 })
 
-const selectedStyle = style({
-	border: "2px solid black"
+const labelStyle = style({
+	border: "2px solid black",
+	minWidth: "20rem"
 })
-
-const itemTextStyle = style({
-	margin: 'auto 0'
-})
-
-const iconSizes = {
-
-	'small': style({
-		width: '1.75rem',
-		height: '1.75rem'
-	}),
-
-	'medium': style({
-		width: '3rem',
-		height: '3rem'
-	}),
-
-	'large': style({
-		width: '5rem',
-		height: '5rem'
-	})
-}
 
 interface FormFieldProps {
-	text: string
-	icon: string
-	clickHandler: (event?: any) => void
-	iconSize?: 'small' | 'medium' | 'large'
+	label: string
+	field: FormFieldState
+	type?: string
 }
 
-export function ListButton(props: ListButtonProps): JSX.Element {
-	const size = props.iconSize || 'small'
-	return (
-		<div className={itemStyle} onClick={props.clickHandler}>
-			<div className={itemTextStyle}>{props.text}</div>
-			<img src={props.icon} className={iconSizes[size]} />
-		</div>)
+@observer
+export class FormField extends React.Component<FormFieldProps, {}> {
+	render() {
+		return (
+			<div className={formFieldStyle}>
+				<label>{this.props.label}</label>
+				<input type={this.props.type || "text"} className={labelStyle} value={this.props.field.value} onChange={(event) => this.props.field.value = event.target.value}/>
+			</div>
+		)
+	}
 }
