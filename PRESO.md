@@ -12,4 +12,18 @@ First of all, it's Typescript. We're big fans of Typescript. A little bit of typ
 
 Before we begin, there's one more thing I should talk about, which is which bits are shared and which bits are not shared? Lets look at the structure of this demo app:
 
+<show app structure image>
+
+Note that the build tools are different for each.
+
+Ideas to demonstrate how it works:
+
+1. Modify Devices.tsx, change the header from Devices to something else. - See that this only affects web and not iOS.
+2. Edit DeviceState.ts, add a new entry into the list of devices, see that it appears in both web and native apps
+3. Modify the header colour
+4. 
+
+Wrap up:
+
+What else could be shared, what are the pros and cons?
 

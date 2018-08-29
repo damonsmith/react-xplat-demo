@@ -28,7 +28,15 @@ export class DevicesState {
 				type: "TV",
 				poweredOn: true,
 				operating: false
-			}]
+			},
+			{
+				id: "123",
+				nickname: "Blender",
+				type: "kitchen",
+				poweredOn: false,
+				operating: false
+			}
+		]
 	}
 
 	getDevices() {

@@ -11,7 +11,7 @@ import { AppLayout } from './AppLayout'
 import { Header } from '../../header'
 import { StateStore } from '../state/StateStore'
 import { Route } from '../../router/src/Route'
-import '../style/app.css'
+import '../../styleguide/tsx_web/app.css'
 
 const appState = new StateStore()
 
