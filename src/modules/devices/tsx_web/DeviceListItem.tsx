@@ -47,9 +47,9 @@ export class DeviceListItem extends React.Component<DeviceListItemProps, {}> {
 	render() {
 		return (
 			<div className={itemStyle} onClick={() => this.props.item.poweredOn = !this.props.item.poweredOn}>
+				<img src={icons[this.props.item.type]} className={iconStyle} />
 				<div className={itemTextStyle}>{this.props.item.nickname}</div>
 				{this.props.item.poweredOn ? <div>On</div> : <div>Off</div>}
-				<img src={icons[this.props.item.type]} className={iconStyle} />
 			</div>)
 	}
 }

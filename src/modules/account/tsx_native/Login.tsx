@@ -1,17 +1,15 @@
 import * as React from 'react'
-import { style } from 'typestyle'
+import { StyleSheet } from 'react-native'
 import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
 import { Colors } from '../../styleguide/colors'
 import { Redirect } from '../../router/src/Redirect'
+import { Txt } from '../../styleguide/tsx_native/Txt'
 
-const loginModalStyle = style({
-	display: 'flex',
-	backgroundColor: Colors.modalBackground,
-	flexDirection: 'column',
-	height: '100%',
-	margin: '0.6rem',
-	padding: '0.6rem'
+const style = StyleSheet.create({
+	container: {
+		backgroundColor: Colors.modalBackground
+	}
 })
 
 interface Props {
@@ -28,12 +26,7 @@ export class Login extends React.Component<Props, {}> {
 		}
 		else {
 			return (
-				<div className={loginModalStyle}>
-					<h1>Log in</h1>
-					<label>Email:</label><input />
-					<label>Password:</label><input type="password"/>
-					<button onClick={appState.account.signIn}>Log in</button>
-				</div>
+				<Txt>Login</Txt>
 			)
 		}
 	}

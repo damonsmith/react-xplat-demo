@@ -1,9 +1,15 @@
 import * as React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet, Text, Image } from 'react-native'
 import { Device } from '../state/DevicesState'
 import { observer } from 'mobx-react'
+import { Txt } from '../../styleguide/tsx_native/Txt'
+import { Colors } from '../../styleguide/colors'
 
-const icons = {
+interface IconSet {
+	[key: string]: any
+}
+
+const icons: IconSet = {
 	stereo: require("../images/stereo.jpg"),
 	tv: require("../images/tv.jpg"),
 	blender: require("../images/blender.jpg")
@@ -11,16 +17,20 @@ const icons = {
 
 const style = StyleSheet.create({
 	item: {
-		padding: '1rem',
-		margin: '0 0 2rem 0',
-		display: 'flex',
-		backgroundColor: 'white',
-		color: 'black',
-		justifyContent: 'space-between'
+		alignItems: "center",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		marginTop: 10,
+		marginBottom: 10,
+		backgroundColor: "white",
+		height: 50,
+		paddingLeft: 10,
+		paddingRight: 10
+
 	},
 	icon: {
-		width: '1.75rem',
-		height: '1.75rem'
+		width: 25,
+		height: 25
 	}
 })
 
@@ -33,9 +43,9 @@ export class DeviceListItem extends React.Component<DeviceListItemProps, {}> {
 	render() {
 		return (
 			<View style={style.item}>
+				<Image style={style.icon} source={icons[this.props.item.type]} />
 				<Text>{this.props.item.nickname}</Text>
-				{this.props.item.poweredOn ? <div>On</div> : <div>Off</div>}
-				<img src={icons[this.props.item.type]} style={style.icon} />
+				{this.props.item.poweredOn ? <Text>On</Text> : <Text>Off</Text>}
 			</View>)
 	}
 }

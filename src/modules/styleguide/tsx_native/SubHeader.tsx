@@ -1,17 +1,22 @@
 import * as React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Colors } from '../colors'
+import { Txt } from './Txt'
 const style = StyleSheet.create({
 	top: {
-		display: 'flex',
-		padding: '1rem',
-		marginBottom: '0.6rem',
-		backgroundColor: Colors.secondaryBrandColor
+		height: 50,
+		backgroundColor: Colors.secondaryBrandColor,
+		alignItems: "flex-start"
 	},
 	header: {
-		backgroundColor: 'black',
-		color: 'white',
-		padding: '1rem'
+		flex: 1,
+		backgroundColor: '#000000',
+		marginTop: 10,
+		marginLeft: 16,
+		width: 80,
+		height: 25,
+		justifyContent: 'center',
+		alignItems: 'center'
 	}
 })
 
@@ -22,7 +27,7 @@ interface Props {
 export function SubHeader(props: Props): JSX.Element {
 	return (
 		<View style={style.top}>
-			<View style={style.header}>{props.text}</View>
+			<View style={style.header}><Txt>{props.text}</Txt></View>
 		</View>
 	)
 }

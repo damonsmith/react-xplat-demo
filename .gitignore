@@ -7,6 +7,8 @@ tsconfig.json
 # dependencies
 node_modules
 
+# Expo
+.expo
 
 # testing
 /coverage
