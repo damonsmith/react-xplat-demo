@@ -8,11 +8,15 @@ So, I'm going to ask for a brave volunteer or two to come up here are do a live 
 
 But first let me describe this codebase and how it works.
 
-First of all, it's Typescript. We're big fans of Typescript. A little bit of type definition up front gives us a massive boost in quality, tooling and refactorability down the track. Also it uses MobX for it's state storage because I'm bored of Redux at work and MobX is succinct due to it's heavy use of evil magic.
+First of all, it's Typescript. We're big fans of Typescript. A little bit of type definition up front gives us a massive boost in quality, tooling and refactorability down the track. This codebase uses MobX for it's state storage because I'm bored of Redux at work and MobX is nice and succinct for a demo due to it's heavy use of evil magic.
+
+[demo clicking around the app, describe what it's meant to be]
 
 Before we begin, there's one more thing I should talk about, which is which bits are shared and which bits are not shared? Lets look at the structure of this demo app:
 
-<show app structure image>
+It's got a codebase separated into modules in an attempt to keep each part of the app separate and self contained, with it's own tests, state and presentation.
+
+[show app structure image]
 
 Note that the build tools are different for each.
 

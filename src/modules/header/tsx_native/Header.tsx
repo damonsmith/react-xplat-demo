@@ -2,15 +2,17 @@ import * as React from 'react'
 import { Colors } from '../../styleguide/colors'
 import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
-import { Link } from '../../router/src/Link'
-import { StyleSheet, View } from 'react-native'
+import { Link } from '../../router/tsx_native/Link'
+import { StyleSheet, View, SafeAreaView } from 'react-native'
+import { Txt } from '../../styleguide/tsx_native/Txt'
 
 const styles = StyleSheet.create({
+	safeAreaView: {
+		backgroundColor: Colors.brandColor
+	},
 	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center'
+		backgroundColor: Colors.brandColor,
+		height: 50
 	},
 	logoStyle: {
 
@@ -32,15 +34,17 @@ export class Header extends React.Component<HeaderProps, {}> {
 	render() {
 		const { appState } = this.props
 		return (
-			<View style={styles.container}>
-				<View style={styles.logoStyle}><Link to="/">React XPLAT Demo</Link></View>
-				<View style={styles.loginAreaStyle}>
-					{appState.account.isLoggedIn
-						? <Link to="/account"><span style={styles.attentionDot}/>{appState.account.displayName}</Link>
-						: <Link to="/login"><span style={styles.attentionDot}/>Sign in</Link>
-					}
+			<SafeAreaView style={styles.safeAreaView}>
+				<View style={styles.container}>
+					<View style={styles.logoStyle}><Link to="/"><Txt>React XPLAT Demo</Txt></Link></View>
+					<View style={styles.loginAreaStyle}>
+						{appState.account.isLoggedIn
+							? <Link to="/account"><View style={styles.attentionDot}/><Txt>{appState.account.displayName}</Txt></Link>
+							: <Link to="/login"><View style={styles.attentionDot}/><Txt>Sign in</Txt></Link>
+						}
+					</View>
 				</View>
-			</View>
+			</SafeAreaView>
 		)
 	}
 }

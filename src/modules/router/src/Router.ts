@@ -8,7 +8,9 @@ import RouteRecognizer, { Results, Result } from "route-recognizer"
 const routers: Router[] = []
 
 export function navigate(to: string) {
-	window.history.pushState(null, "", to)
+	if (window && window.history) {
+		window.history.pushState(null, "", to)
+	}
 	routers.forEach(router => router._locationChanged(to))
 }
 

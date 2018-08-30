@@ -25,7 +25,7 @@ export class Route extends React.Component<RouteProps, {}> {
 			return child
 		}
 		else {
-			return (<span />)
+			return null
 		}
 	}
 }

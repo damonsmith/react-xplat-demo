@@ -3,7 +3,7 @@ import { style } from 'typestyle'
 import { Colors } from '../../styleguide/colors'
 import { StateStore } from '../../base/state/StateStore'
 import { observer } from 'mobx-react'
-import { Link } from '../../router/src/Link'
+import { Link } from '../../router/tsx_web/Link'
 
 const topStyle = style({
 	display: 'flex',
